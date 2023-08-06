@@ -10,7 +10,12 @@
   --clr-orange-300: 25 100% 94%;
   --clr-orange-400: 26 100% 55%;
 
+  --fs-200: 0.5rem;
+  --fs-300: 0.83rem;
   --fs-400: 1rem;
+  --fs-500: 1.85rem;
+  --fs-800: 2.8rem;
+
   --fw-400: 400;
   --fw-700: 700;
 }
@@ -32,6 +37,7 @@ h1,
 h2,
 h3,
 h4,
+h5,
 p,
 figure,
 blockquote,
@@ -102,7 +108,21 @@ select {
 }
 
 /* ------------- Composition -------------- */
+.container {
+  position: relative;
+}
 
+@media (max-width: 1200px) {
+  .container {
+    padding-inline: 40px;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding-inline: 0;
+  }
+}
 /* ------------- Utility ------------------ */
 
 /* ------------- Block -------------------- */

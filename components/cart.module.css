@@ -1,0 +1,117 @@
+.cart {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.cart > img {
+  transition: all 200ms ease-in-out;
+}
+
+.cart:hover > img {
+  filter: brightness(0);
+}
+
+.cartItemCount {
+  background-color: hsl(var(--clr-orange-400));
+  color: hsl(var(--clr-neutral-100));
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  font-size: var(--fs-200);
+  font-weight: var(--fw-700);
+  padding: 0.1em 1em;
+  border-radius: 10px;
+}
+
+.cartPopup {
+  --flex-gap: 0;
+  flex-direction: column;
+  width: 360px;
+  min-height: 260px;
+  border-radius: 10px;
+  box-shadow: 0 20px 50px -10px hsl(var(--clr-neutral-800) / 0.3);
+  position: absolute;
+  top: 90px;
+  right: 80px;
+  background-color: hsl(var(--clr-neutral-100));
+  z-index: 9999;
+}
+
+@media (max-width: 500px) {
+  .cartPopup {
+    width: auto;
+    top: 78px;
+    left: 10px;
+    right: 10px;
+  }
+}
+
+.cartPopup > h4 {
+  padding: 1.5rem;
+  border-bottom: 0.5px solid hsl(var(--clr-neutral-300));
+}
+
+.cartPopupBottom {
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+.cartEmpty {
+  flex: 1;
+  height: 100%;
+  place-items: center;
+}
+
+.cartItems {
+  --flex-gap: 1rem;
+  flex-direction: column;
+}
+
+.cartItems > .cartItem {
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.cartItem > .cartItemIcon {
+  width: 50px;
+  border-radius: 5px;
+}
+
+.cartItem > .cartItemDesc {
+  --flex-gap: 0;
+  flex-direction: column;
+}
+
+.cartItem > .cartItemDelete {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.cartItemDelete > img {
+  transition: all 200ms ease-in-out;
+}
+
+.cartItemDelete:hover > img {
+  filter: brightness(0);
+}
+
+.btnCheckout {
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 0.8em;
+  background-color: hsl(var(--clr-orange-400));
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  transition: all 200ms ease-in-out;
+}
+
+.btnCheckout:hover {
+  background-color: hsl(var(--clr-orange-400) / 0.6);
+}

@@ -18,3 +18,51 @@
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+
+.fs200 {
+  font-size: var(--fs-200);
+}
+
+.fs300 {
+  font-size: var(--fs-300);
+}
+
+.fs400 {
+  font-size: var(--fs-400);
+}
+
+.fs500 {
+  font-size: var(--fs-500);
+}
+
+.fs800 {
+  font-size: var(--fs-800);
+}
+
+.fw700 {
+  font-weight: var(--fw-700);
+}
+
+.textNeutral100 {
+  color: hsl(var(--clr-neutral-100));
+}
+
+.textNeutral300 {
+  color: hsl(var(--clr-neutral-300));
+}
+
+.textNeutral700 {
+  color: hsl(var(--clr-neutral-700));
+}
+
+.textOrange400 {
+  color: hsl(var(--clr-orange-400));
+}
+
+.lineThrough {
+  text-decoration: line-through;
+}
+
+.upperCase {
+  text-transform: uppercase;
+}

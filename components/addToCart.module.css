@@ -1,0 +1,57 @@
+.productPurchase {
+  margin-top: 2rem;
+}
+
+.productCounter {
+  width: 37.5%;
+  background-color: hsl(var(--clr-neutral-200));
+  border-radius: 8px;
+  margin-right: 1rem;
+}
+
+.productCounter > .btnIncrease,
+.productCounter > .btnDecrease {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  color: hsl(var(--clr-orange-400));
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.productCounter > .btnIncrease:hover,
+.productCounter > .btnDecrease:hover {
+  color: hsl(var(--clr-orange-400) / 0.6);
+}
+
+.productCounter > .productCount {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnAddToCart {
+  --flex-gap: 1rem;
+  width: 62.5%;
+  padding: 1em;
+  cursor: pointer;
+  background-color: hsl(var(--clr-orange-400));
+  color: hsl(var(--clr-neutral-100));
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0px 20px 50px -10px hsl(var(--clr-orange-400) / 0.6);
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms ease-in-out;
+}
+
+.btnAddToCart > img {
+  filter: brightness(100);
+  width: 18px;
+}
+
+.btnAddToCart:hover {
+  background-color: hsl(var(--clr-orange-400) / 0.65);
+}

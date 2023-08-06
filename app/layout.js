@@ -1,8 +1,9 @@
 import "./globals.css";
 import { Kumbh_Sans } from "next/font/google";
 
-import Header from "@/components/header";
+import Nav from "@/components/nav";
 import Footer from "@/components/footer";
+import CartProvider from "@/components/cartProvider";
 
 const kumbhSans = Kumbh_Sans({ subsets: ["latin"] });
 
@@ -15,11 +16,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={kumbhSans.className}>
-        <div className="container">
-          <Header />
-          {children}
-          <Footer />
-        </div>
+        <CartProvider>
+          <div className="container">
+            <Nav />
+            {children}
+            <Footer />
+          </div>
+        </CartProvider>
       </body>
     </html>
   );
