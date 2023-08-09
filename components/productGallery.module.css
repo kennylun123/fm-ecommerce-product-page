@@ -1,0 +1,123 @@
+.productGallery {
+  flex: 1;
+  padding-left: 45px;
+  padding-right: 62.5px;
+  min-width: 500px;
+  position: relative;
+}
+
+.productGalleryCover {
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.productGalleryCover > img {
+  cursor: pointer;
+}
+
+.productThumbnails {
+  --flex-gap: 1.5rem;
+  list-style: none;
+}
+
+.productThumbnail {
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.productThumbnail::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: hsl(var(--clr-neutral-100));
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+}
+
+.productThumbnail:hover::after {
+  opacity: 0.4;
+}
+
+.productThumbnailActive {
+  outline: solid 2px hsl(var(--clr-orange-400));
+}
+
+.productThumbnailActive::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: hsl(var(--clr-neutral-100));
+  opacity: 0.6;
+}
+
+.productGallerySlider,
+.btnSliderPrev,
+.btnSliderNext {
+  display: none;
+}
+
+@media (max-width: 1050px) {
+  .productGallery {
+    padding-inline: 20px;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 880px) {
+  .productGallery {
+    padding: 0;
+  }
+
+  .productGallery > .productGalleryCover,
+  .productGallery > .productThumbnails {
+    display: none;
+  }
+
+  .productGallerySlider {
+    display: flex;
+  }
+
+  .btnSliderPrev,
+  .btnSliderNext {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    transform: translateY(-50%);
+  }
+
+  .btnSliderPrev {
+    left: 16px;
+  }
+
+  .btnSliderNext {
+    right: 16px;
+  }
+
+  .btnSliderNext > img {
+    width: 10px;
+    margin-left: 3px;
+    transition: all 200ms ease-in-out;
+  }
+
+  .btnSliderPrev > img {
+    width: 10px;
+    margin-right: 3px;
+    transition: all 200ms ease-in-out;
+  }
+
+  .btnSliderPrev:hover > img,
+  .btnSliderNext:hover > img {
+    opacity: 0.5;
+  }
+}

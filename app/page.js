@@ -1,7 +1,9 @@
-import AddToCart from "@/components/addToCart";
 import styles from "./page.module.css";
 import utils from "@/components/utils.module.css";
+import ProductGallery from "@/components/productGallery";
+import AddToCart from "@/components/addToCart";
 import { product } from "@/public/data";
+import Lightbox from "@/components/lightbox";
 
 export default function RootPage() {
   return (
@@ -9,61 +11,9 @@ export default function RootPage() {
       <h1 className={utils.srOnly}>
         Frontend Mentor | E-commerce product page
       </h1>
-      <div className={styles.productGallery}>
-        <div className={styles.productGalleryCover}>
-          <img src={product.images.mainImg.src} alt="gallery-cover-image" />
-        </div>
-        <ul className={`${styles.productThumbnails} ${utils.flex}`}>
-          <li className={styles.productThumbnail}>
-            <img
-              src={product.images.thumbnails[0].src}
-              alt="product-thumbnail-1"
-            />
-          </li>
-          <li className={styles.productThumbnail}>
-            <img
-              src={product.images.thumbnails[1].src}
-              alt="product-thumbnail-2"
-            />
-          </li>
-          <li className={styles.productThumbnail}>
-            <img
-              src={product.images.thumbnails[2].src}
-              alt="product-thumbnail-3"
-            />
-          </li>
-          <li className={styles.productThumbnail}>
-            <img
-              src={product.images.thumbnails[3].src}
-              alt="product-thumbnail-4"
-            />
-          </li>
-        </ul>
-        <div className={`${styles.productGallerySlider}`}>
-          <img
-            src={product.images.sliderImgs[0].img.src}
-            alt="Product Image 1"
-          />
-          <img
-            src={product.images.sliderImgs[1].img.src}
-            alt="Product Image 2"
-          />
-          <img
-            src={product.images.sliderImgs[2].img.src}
-            alt="Product Image 3"
-          />
-          <img
-            src={product.images.sliderImgs[3].img.src}
-            alt="Product Image 4"
-          />
-        </div>
-        <button className={`${styles.btnSliderPrev}`}>
-          <img src="images/icon-previous.svg" alt="Image Previous Button" />
-        </button>
-        <button className={`${styles.btnSliderNext}`}>
-          <img src="images/icon-next.svg" alt="Image Next Button" />
-        </button>
-      </div>
+
+      <ProductGallery images={product.images} />
+
       <div className={styles.productDetail}>
         <span
           className={`${styles.companyName} ${utils.upperCase} ${utils.textOrange400} ${utils.fs300} ${utils.fw700}`}
