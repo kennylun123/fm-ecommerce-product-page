@@ -29,24 +29,6 @@ export const product = {
       product3Thumbnail,
       product4Thumbnail,
     ],
-    lightboxImgs: [
-      {
-        id: "sneaker1",
-        img: product1,
-      },
-      {
-        id: "sneaker2",
-        img: product2,
-      },
-      {
-        id: "sneaker3",
-        img: product3,
-      },
-      {
-        id: "sneaker4",
-        img: product4,
-      },
-    ],
     sliderImgs: [
       {
         id: "sneaker1",

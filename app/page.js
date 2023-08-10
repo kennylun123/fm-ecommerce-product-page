@@ -3,7 +3,6 @@ import utils from "@/components/utils.module.css";
 import ProductGallery from "@/components/productGallery";
 import AddToCart from "@/components/addToCart";
 import { product } from "@/public/data";
-import Lightbox from "@/components/lightbox";
 
 export default function RootPage() {
   return (

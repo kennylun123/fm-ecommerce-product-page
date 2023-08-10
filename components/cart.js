@@ -54,11 +54,7 @@ export default function Cart() {
   const CartItem = ({ item, id }) => {
     return (
       <li className={`${styles.cartItem} ${utils.flex}`}>
-        <img
-          className={styles.cartItemIcon}
-          src={item.thumbnail}
-          alt="cart item icon"
-        />
+        <img src={item.thumbnail} alt="cart item icon" />
 
         <div className={`${styles.cartItemDesc} ${utils.flex}`}>
           <span>{item.name}</span>

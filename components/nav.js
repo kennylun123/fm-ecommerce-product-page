@@ -110,9 +110,6 @@ export default function Header() {
           </ul>
         </nav>
         <div className={`${styles.navMenuRight} ${utils.flex}`}>
-          {/* <button className={styles.cart}>
-            <img src="images/icon-cart.svg"></img>
-          </button> */}
           <Cart />
           <div className={`${styles.avatar} ${utils.flex}`}>
             <img src="images/image-avatar.png"></img>

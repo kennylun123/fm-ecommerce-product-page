@@ -1,4 +1,5 @@
 .lightbox {
+  display: flex;
   visibility: hidden;
   opacity: 0;
   position: fixed;
@@ -7,6 +8,12 @@
   justify-content: center;
   z-index: 50;
   transition: all 200ms ease-in-out;
+}
+
+@media (max-width: 880px) {
+  .lightbox {
+    display: none;
+  }
 }
 
 .lightboxActive {
@@ -109,19 +116,19 @@
   right: -20px;
 }
 
-.btnSliderNext > img {
+.btnSliderNext > svg {
   width: 10px;
   margin-left: 3px;
   transition: all 200ms ease-in-out;
 }
 
-.btnSliderPrev > img {
+.btnSliderPrev > svg {
   width: 10px;
   margin-right: 3px;
   transition: all 200ms ease-in-out;
 }
 
-.btnSliderPrev:hover > img,
-.btnSliderNext:hover > img {
+.btnSliderPrev:hover > svg,
+.btnSliderNext:hover > svg {
   opacity: 0.5;
 }

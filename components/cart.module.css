@@ -77,7 +77,7 @@
   width: 100%;
 }
 
-.cartItem > .cartItemIcon {
+.cartItem > img {
   width: 50px;
   border-radius: 5px;
 }

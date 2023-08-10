@@ -69,6 +69,7 @@
 @media (max-width: 880px) {
   .productGallery {
     padding: 0;
+    overflow: hidden;
   }
 
   .productGallery > .productGalleryCover,
@@ -78,6 +79,7 @@
 
   .productGallerySlider {
     display: flex;
+    transition: all 200ms ease-in-out;
   }
 
   .btnSliderPrev,
@@ -104,20 +106,20 @@
     right: 16px;
   }
 
-  .btnSliderNext > img {
+  .btnSliderNext > svg {
     width: 10px;
     margin-left: 3px;
     transition: all 200ms ease-in-out;
   }
 
-  .btnSliderPrev > img {
+  .btnSliderPrev > svg {
     width: 10px;
     margin-right: 3px;
     transition: all 200ms ease-in-out;
   }
 
-  .btnSliderPrev:hover > img,
-  .btnSliderNext:hover > img {
+  .btnSliderPrev:hover > svg,
+  .btnSliderNext:hover > svg {
     opacity: 0.5;
   }
 }

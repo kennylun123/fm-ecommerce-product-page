@@ -5,32 +5,28 @@ export default function Lightbox({
   showLightbox,
   imgIndex,
   images,
-  onSelect,
+  setImgIndex,
   onClose,
 }) {
   // Handle slider buttons click
-  const onImgSlide = (direction) => {
-    if (direction === "left") {
-      if (imgIndex > 0) {
-        onSelect(imgIndex - 1);
-      } else {
-        onSelect(images.thumbnails.length - 1);
-      }
-    }
-    if (direction === "right") {
-      if (imgIndex < images.thumbnails.length - 1) {
-        onSelect(imgIndex + 1);
-      } else {
-        onSelect(0);
-      }
-    }
+  const goToPrevImg = () => {
+    setImgIndex((prevIndex) =>
+      prevIndex === 0 ? images.mainImgs.length - 1 : prevIndex - 1
+    );
   };
+
+  const goToNextImg = () => {
+    setImgIndex((prevIndex) =>
+      prevIndex === images.mainImgs.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
   return (
     <div
       className={
         showLightbox
-          ? `${styles.lightbox} ${styles.lightboxActive} ${utils.flex}`
-          : `${styles.lightbox} ${utils.flex}`
+          ? `${styles.lightbox} ${styles.lightboxActive}`
+          : `${styles.lightbox}`
       }
     >
       <div className={styles.bgUnderlay} onClick={onClose}></div>
@@ -50,61 +46,44 @@ export default function Lightbox({
         </svg>
 
         <div className={styles.lightboxGalleryCover}>
-          <button
-            className={`${styles.btnSliderPrev}`}
-            onClick={() => onImgSlide("left")}
-          >
-            <img src="images/icon-previous.svg" alt="Image Previous Button" />
+          <button className={`${styles.btnSliderPrev}`} onClick={goToPrevImg}>
+            <svg viewBox="0 0 12 18" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M11 1 3 9l8 8"
+                stroke="#1D2026"
+                strokeWidth="3"
+                fill="none"
+                fillRule="evenodd"
+              />
+            </svg>
           </button>
-          <button
-            className={`${styles.btnSliderNext}`}
-            onClick={() => onImgSlide("right")}
-          >
-            <img src="images/icon-next.svg" alt="Image Next Button" />
+          <button className={`${styles.btnSliderNext}`} onClick={goToNextImg}>
+            <svg viewBox="0 0 13 18" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m2 1 8 8-8 8"
+                stroke="#1D2026"
+                strokeWidth="3"
+                fill="none"
+                fillRule="evenodd"
+              />
+            </svg>
           </button>
           <img src={images.mainImgs[imgIndex].src} alt="Lightbox cover image" />
         </div>
         <ul className={`${styles.lightboxThumbnails} ${utils.flex}`}>
-          <li
-            className={
-              imgIndex === 0
-                ? `${styles.lightboxThumbnail} ${styles.lightboxThumbnailActive}`
-                : styles.lightboxThumbnail
-            }
-            onClick={() => onSelect(0)}
-          >
-            <img src={images.thumbnails[0].src} alt="Lightbox thumbnail 1" />
-          </li>
-          <li
-            className={
-              imgIndex === 1
-                ? `${styles.lightboxThumbnail} ${styles.lightboxThumbnailActive}`
-                : styles.lightboxThumbnail
-            }
-            onClick={() => onSelect(1)}
-          >
-            <img src={images.thumbnails[1].src} alt="Lightbox thumbnail 2" />
-          </li>
-          <li
-            className={
-              imgIndex === 2
-                ? `${styles.lightboxThumbnail} ${styles.lightboxThumbnailActive}`
-                : styles.lightboxThumbnail
-            }
-            onClick={() => onSelect(2)}
-          >
-            <img src={images.thumbnails[2].src} alt="Lightbox thumbnail 3" />
-          </li>
-          <li
-            className={
-              imgIndex === 3
-                ? `${styles.lightboxThumbnail} ${styles.lightboxThumbnailActive}`
-                : styles.lightboxThumbnail
-            }
-            onClick={() => onSelect(3)}
-          >
-            <img src={images.thumbnails[3].src} alt="Lightbox thumbnail 4" />
-          </li>
+          {images.thumbnails.map((element, index) => (
+            <li
+              key={index}
+              className={
+                imgIndex === index
+                  ? `${styles.lightboxThumbnail} ${styles.lightboxThumbnailActive}`
+                  : styles.lightboxThumbnail
+              }
+              onClick={() => setImgIndex(index)}
+            >
+              <img src={element.src} alt={`Lightbox thumbnail ${index}`} />
+            </li>
+          ))}
         </ul>
       </div>
     </div>
