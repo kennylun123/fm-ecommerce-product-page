@@ -7,11 +7,13 @@
   background-color: hsl(var(--clr-neutral-200));
   border-radius: 8px;
   margin-right: 1rem;
+  justify-content: space-between;
 }
 
 .productCounter > .btnIncrease,
 .productCounter > .btnDecrease {
-  flex: 1;
+  width: 33%;
+  display: flex;
   align-items: center;
   justify-content: center;
   border: none;
@@ -27,7 +29,8 @@
 }
 
 .productCounter > .productCount {
-  flex: 1;
+  width: 33%;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -54,4 +57,26 @@
 
 .btnAddToCart:hover {
   background-color: hsl(var(--clr-orange-400) / 0.65);
+}
+
+@media (max-width: 500px) {
+  .productPurchase {
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  .productCounter {
+    width: 100%;
+    padding: 1em;
+    margin: 0 0 1rem 0;
+  }
+
+  .productCounter > .btnIncrease,
+  .productCounter > .btnDecrease {
+    width: 40px;
+  }
+
+  .btnAddToCart {
+    width: 100%;
+  }
 }

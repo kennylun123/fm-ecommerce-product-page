@@ -6,8 +6,6 @@
   padding-block: 90px;
 }
 
-/* Product Detail */
-
 .productDetail {
   flex: 1;
   padding: 65px 45px 65px 62.5px;
@@ -54,6 +52,11 @@
 }
 
 @media (max-width: 500px) {
+  .productDetail > h1 {
+    line-height: 1.1;
+    margin-block: 0.5rem 1rem;
+  }
+
   .productDetail > .productPrice {
     flex-direction: row;
     align-items: center;

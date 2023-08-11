@@ -36,25 +36,15 @@ export default function AddToCart({ name, price, thumbnail }) {
 
   return (
     <div className={`${styles.productPurchase} ${utils.flex}`}>
-      <div
-        className={`${styles.productCounter} ${utils.flex} ${utils.fw700} ${utils.fs500}`}
-      >
-        <button
-          className={`${styles.btnDecrease} ${utils.flex}`}
-          onClick={onDecrease}
-        >
-          -
+      <div className={`${styles.productCounter} ${utils.flex} ${utils.fw700}`}>
+        <button className={`${styles.btnDecrease}`} onClick={onDecrease}>
+          <img src="images/icon-minus.svg"></img>
         </button>
-        <span
-          className={`${styles.productCount} ${utils.flex} ${utils.textNeutral700} ${utils.fs400}`}
-        >
+        <span className={`${styles.productCount} ${utils.textNeutral700}`}>
           {count}
         </span>
-        <button
-          className={`${styles.btnIncrease} ${utils.flex}`}
-          onClick={onIncrease}
-        >
-          +
+        <button className={`${styles.btnIncrease}`} onClick={onIncrease}>
+          <img src="images/icon-plus.svg"></img>
         </button>
       </div>
       <button
