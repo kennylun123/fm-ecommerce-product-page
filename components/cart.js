@@ -87,7 +87,7 @@ export default function Cart() {
   return (
     <>
       <button className={styles.cart} onClick={toggleIsCartOpened}>
-        <img src="images/icon-cart.svg"></img>
+        <img src="images/icon-cart.svg" alt="icon cart" aria-label="Cart"></img>
         {cartItems.length ? (
           <div className={styles.cartItemCount}>{cartItems.length}</div>
         ) : null}

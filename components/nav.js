@@ -112,7 +112,7 @@ export default function Header() {
         <div className={`${styles.navMenuRight} ${utils.flex}`}>
           <Cart />
           <div className={`${styles.avatar} ${utils.flex}`}>
-            <img src="images/image-avatar.png"></img>
+            <img src="images/image-avatar.png" alt="Icon avatar"></img>
           </div>
         </div>
       </header>
