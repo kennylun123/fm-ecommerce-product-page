@@ -38,8 +38,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/responsive-ecommerce-product-page-with-nextjs-lightbox-context-api-gq1E3CfTyy](https://www.frontendmentor.io/solutions/responsive-ecommerce-product-page-with-nextjs-lightbox-context-api-gq1E3CfTyy)
+- Live Site URL: [https://fm-ecommerce-product-page-kennylun123.vercel.app/](https://fm-ecommerce-product-page-kennylun123.vercel.app/)
 
 ## My process
 
